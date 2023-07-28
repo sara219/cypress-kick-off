@@ -49,10 +49,18 @@ it('Find Element by Attribute', () => {
 
 // we can get the first element from a list
 
-it.only('find the first element from a list of elements', () => {
-  cy.visit('cypress/index.html');
+it('find the first element from a list of elements', () => {
+  cy.visit('cypress/index.html')
   // to find the first element from a list of elements we use the (first()) command
-  cy.get('h2').first();
-});
+  cy.get('h2').first()
+})
 
 // ?============================================
+
+// we can get the last element from a list
+
+it.only('find the last element from a list of elements', () => {
+  cy.visit('cypress/index.html')
+  // to find the last element from a list of elements we use the (last()) command
+  cy.get('button').last()
+})
