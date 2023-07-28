@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 
 // We use the (get) command to find element(s)
-// use only command after it (it.only) to execute a specific test case
+// ! use (only) command after it (it.only) to execute a specific test case
 
 // we can find element by tag name
 it('Find Element by tag name', () => {
   cy.visit('cypress/index.html')
-
   // we put the tag name (html tag) inside the get command
   // The get command will return all the elements that matches the tag name
   cy.get('h2')
@@ -81,9 +80,26 @@ it('find the an element from a list of elements by index', () => {
 
 // filter a list of element to get an element that pass a condition
 
-it.only('find the an element from a list of elements using filter', () => {
+it('find the an element from a list of elements using filter', () => {
   cy.visit('cypress/index.html')
   // to filter some elements from a list of elements we use the filter command
   // we use css selectors inside the filter command
   cy.get('li').filter('.mobile')
+})
+
+// ?============================================
+
+//  children command
+
+it.only('find the elements using the children command', () => {
+  cy.visit('cypress/index.html')
+  // to find elements using the parent we use the children command
+  // we can use the children command without any arguments and in that case it will return all the children
+  cy.get('.course-list').children()
+
+  // We can add some css selectors to filter our some of the children
+  cy.get('.course-list').children('.web')
+  cy.get('.course-list').children().first()
+  cy.get('.course-list').children().last()
+  cy.get('.course-list').children().eq(3)
 })
