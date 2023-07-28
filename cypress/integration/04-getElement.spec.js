@@ -59,8 +59,19 @@ it('find the first element from a list of elements', () => {
 
 // we can get the last element from a list
 
-it.only('find the last element from a list of elements', () => {
+it('find the last element from a list of elements', () => {
   cy.visit('cypress/index.html')
   // to find the last element from a list of elements we use the (last()) command
   cy.get('button').last()
 })
+
+// ?============================================
+
+//  get an element from a list (not the last or the first ) => using index with eq command.
+
+it.only('find the an element from a list of elements by index', () => {
+  cy.visit('cypress/index.html');
+  // to find the  element from a list of elements by index we use eq(index)
+  // elements are saved in an array , Zero index
+  cy.get('h2').eq(1);
+});
