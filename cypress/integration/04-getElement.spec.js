@@ -130,9 +130,19 @@ it('find the elements using the parents command', () => {
 
 // ?============================================
 
-it.only('find the elements using the siblings command', () => {
+it('find the elements using the siblings command', () => {
   cy.visit('cypress/index.html')
   // to find elements using the sibling we use the siblings command
   // siblings command will return the all  siblings of the element in an array
   cy.get('.list1.web').siblings('.mobile')
 })
+
+// ?============================================
+
+
+it.only('find the elements by text', () => {
+  cy.visit('cypress/index.html');
+  // To find any element using text we can use the contains Command .contains(text)
+  cy.contains('Cypress');
+  cy.get('li').contains('css')
+});
