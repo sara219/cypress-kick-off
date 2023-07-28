@@ -38,9 +38,21 @@ it('Find Element by class name', () => {
 // ?============================================
 
 // we can find element by Attribute
-it.only('Find Element by Attribute', () => {
+it('Find Element by Attribute', () => {
   cy.visit('cypress/index.html')
   // to find any element using any attribute we use []
   cy.get('[value="Developer"]')
   cy.get('[type="button"]')
 })
+
+// ?============================================
+
+// we can get the first element from a list
+
+it.only('find the first element from a list of elements', () => {
+  cy.visit('cypress/index.html');
+  // to find the first element from a list of elements we use the (first()) command
+  cy.get('h2').first();
+});
+
+// ?============================================
