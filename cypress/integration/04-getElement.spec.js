@@ -106,8 +106,16 @@ it('find the elements using the children command', () => {
 
 // ?============================================
 
-it.only('find the elements using the children command', () => {
-  cy.visit('cypress/index.html');
+it('find the elements using the children command', () => {
+  cy.visit('cypress/index.html')
   // we can find elements based on the parent using the find command .find(css selector)
-  cy.get('.course-list').find('.mobile');
-});
+  cy.get('.course-list').find('.mobile')
+})
+
+// ?============================================
+
+it.only('find the elements using parent command', () => {
+  cy.visit('cypress/index.html')
+  // Parent command will return the direct parent of the element
+  cy.get('#draggable-3').parent()
+})
