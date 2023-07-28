@@ -91,7 +91,7 @@ it('find the an element from a list of elements using filter', () => {
 
 //  children command
 
-it.only('find the elements using the children command', () => {
+it('find the elements using the children command', () => {
   cy.visit('cypress/index.html')
   // to find elements using the parent we use the children command
   // we can use the children command without any arguments and in that case it will return all the children
@@ -103,3 +103,11 @@ it.only('find the elements using the children command', () => {
   cy.get('.course-list').children().last()
   cy.get('.course-list').children().eq(3)
 })
+
+// ?============================================
+
+it.only('find the elements using the children command', () => {
+  cy.visit('cypress/index.html');
+  // we can find elements based on the parent using the find command .find(css selector)
+  cy.get('.course-list').find('.mobile');
+});
