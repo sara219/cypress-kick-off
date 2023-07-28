@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 // We use the (get) command to find element(s)
+// use only command after it (it.only) to execute a specific test case
 
 // we can find element by tag name
 it('Find Element by tag name', () => {
@@ -69,9 +70,20 @@ it('find the last element from a list of elements', () => {
 
 //  get an element from a list (not the last or the first ) => using index with eq command.
 
-it.only('find the an element from a list of elements by index', () => {
-  cy.visit('cypress/index.html');
+it('find the an element from a list of elements by index', () => {
+  cy.visit('cypress/index.html')
   // to find the  element from a list of elements by index we use eq(index)
   // elements are saved in an array , Zero index
-  cy.get('h2').eq(1);
-});
+  cy.get('h2').eq(1)
+})
+
+// ?============================================
+
+// filter a list of element to get an element that pass a condition
+
+it.only('find the an element from a list of elements using filter', () => {
+  cy.visit('cypress/index.html')
+  // to filter some elements from a list of elements we use the filter command
+  // we use css selectors inside the filter command
+  cy.get('li').filter('.mobile')
+})
