@@ -114,8 +114,25 @@ it('find the elements using the children command', () => {
 
 // ?============================================
 
-it.only('find the elements using parent command', () => {
+it('find the elements using parent command', () => {
   cy.visit('cypress/index.html')
   // Parent command will return the direct parent of the element
   cy.get('#draggable-3').parent()
+})
+
+// ?============================================
+
+it('find the elements using the parents command', () => {
+  cy.visit('cypress/index.html')
+  // Parents command will return the all  parents of the element in an array
+  cy.get('.list1.web').parents()
+})
+
+// ?============================================
+
+it.only('find the elements using the siblings command', () => {
+  cy.visit('cypress/index.html')
+  // to find elements using the sibling we use the siblings command
+  // siblings command will return the all  siblings of the element in an array
+  cy.get('.list1.web').siblings('.mobile')
 })
