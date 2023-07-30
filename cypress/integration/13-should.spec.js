@@ -22,3 +22,10 @@ it('Should have class', () => {
   cy.visit('cypress/index.html')
   cy.contains('wdio').should('have.class', 'web')
 })
+
+it.only('should have css command', () => {
+  cy.visit('cypress/index.html')
+  cy.get('.focus')
+    .focus()
+    .should('have.css', 'background-color', 'rgb(255, 0, 0)')
+})
