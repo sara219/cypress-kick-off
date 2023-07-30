@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-it('Wrap Command', () => {
+it('Invoke Command', () => {
   const student = {
     fName: 'Sara',
     family: 'Abu Awwad',
