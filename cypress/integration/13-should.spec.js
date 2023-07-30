@@ -23,9 +23,14 @@ it('Should have class', () => {
   cy.contains('wdio').should('have.class', 'web')
 })
 
-it.only('should have css command', () => {
+it('should have css command', () => {
   cy.visit('cypress/index.html')
   cy.get('.focus')
     .focus()
     .should('have.css', 'background-color', 'rgb(255, 0, 0)')
+})
+
+it.only('Should have an Attribute', () => {
+  cy.visit('cypress/index.html')
+  cy.get('.invoice-button').first().should('have.attr', 'type', 'button')
 })
