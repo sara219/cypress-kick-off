@@ -13,7 +13,12 @@ it('Should Have a Text', () => {
   cy.get('#welcome').should('have.text', 'Welcome to Cypress Tutorials')
 })
 
-it.only('Should Contain Text', () => {
+it('Should Contain Text', () => {
   cy.visit('cypress/index.html')
   cy.get('#welcome').should('contain.text', 'Welcome')
+})
+
+it('Should have class', () => {
+  cy.visit('cypress/index.html')
+  cy.contains('wdio').should('have.class', 'web')
 })
