@@ -20,3 +20,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+beforeEach(() => {
+  cy.visit('cypress/index.html')
+  // define the alias from another file
+  cy.url().as('url')
+})
